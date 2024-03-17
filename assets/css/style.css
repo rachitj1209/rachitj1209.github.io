@@ -79,6 +79,7 @@ body {
   letter-spacing: 0.4px;
   text-transform: uppercase;
   text-decoration: none;
+  backface-visibility: hidden;
   
 }
 
@@ -127,20 +128,56 @@ body {
   padding: 0;
   width: 32px;
   height: 32px;
-  margin: 0;
+  margin-right: 10px;
   padding-right: 20px;
   position: absolute; 
+  transition: transform .1s;
   right: 0;
-  
 }
+
+#linkedinPic:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
+}
+
 #notionPic {
   margin: 0;
   padding: 0;
   width: 32px;
   height: 32px;
-  margin-right: 50px;
+  margin-right: 60px;
   padding-right: 20px;
   position: absolute; 
+  transition: transform .1s;
   right: 0;
+}
+
+#notionPic:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
   
+}
+
+.homenavbar:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
+}
+.aboutsnavbar:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
+  
+}
+.projectsnavbar:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
+}
+.worknavbar:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
 }
