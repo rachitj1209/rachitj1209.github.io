@@ -1,6 +1,6 @@
 body {
-  background-color: coral;
-  color: #000000;
+  background-color: #1f1f1f;
+  color: #ffffff;
 }
 #header {
   transition: all 0.5s;
@@ -45,13 +45,32 @@ body {
   float: left;
 }
 
+.navCenter {
+  margin: 0;
+  position: absolute; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.navbar li {
+  align-items: center;
+  display: flex;
+  float: right;
+}
+
+.navbar>ul>li {
+  white-space: nowrap;
+  padding: 10px 0 10px 30px;
+  display: flex;
+  float: right;
+}
 
 .navbar a,
 .navbar a:focus {
   display: flex;
   align-items: relative;
   justify-content: space-between;
-  color: #070707;
+  color: #fff;
   font-size: 16px;
   font-weight: 600;
   padding: 10px;
@@ -63,6 +82,45 @@ body {
   
 }
 
+.navbar a i,
+.navbar a:focus i {
+  font-size: 12px;
+  line-height: 5;
+  margin-left: 5px;
+
+}
+
+.navbar>ul>li>a:before {
+  content: "";
+  position: absolute; 
+  right: 0;
+  width: 100%;
+  height: 2px;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  background-color: #fc0000;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out 0s;
+  
+  
+}
+
+.navbar a:hover:before,
+.navbar li:hover>a:before,
+.navbar .active:before {
+  visibility: visible;
+  width: 80%;
+  
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
+  color: #fff;
+}
+
 
 #linkedinPic {
   margin: 0;
@@ -70,6 +128,17 @@ body {
   width: 32px;
   height: 32px;
   margin: 0;
+  padding-right: 20px;
+  position: absolute; 
+  right: 0;
+  
+}
+#notionPic {
+  margin: 0;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  margin-right: 50px;
   padding-right: 20px;
   position: absolute; 
   right: 0;
