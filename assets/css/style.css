@@ -1,6 +1,7 @@
 body {
   background-color: #1f1f1f;
   color: #ffffff;
+  font-family: "Calibri";
 }
 #header {
   transition: all 0.5s;
