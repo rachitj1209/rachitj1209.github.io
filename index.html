@@ -5,25 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rachit Jain</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     html {
       scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
     }
     iframe {
       width: 100%;
       height: 85vh;
       border: none;
+      background: white;
+    }
+    /* smooth theme transition */
+    body, header, section {
+      transition: background 0.3s, color 0.3s;
     }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans">
   <!-- Navbar -->
-  <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+  <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50 dark:bg-gray-900 dark:text-gray-100">
     <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-3">
+      <!-- Light/Dark toggle -->
+      <button id="theme-toggle" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+        🌙
+      </button>
+
+      <!-- Nav links -->
       <nav class="flex space-x-6 text-lg font-medium">
-        <a href="#resume" class="hover:text-blue-600">Resume</a>
-        <a href="#portfolio" class="hover:text-blue-600">Portfolio</a>
+        <a href="#resume" class="hover:text-blue-600 dark:hover:text-blue-400">Resume</a>
+        <a href="#portfolio" class="hover:text-blue-600 dark:hover:text-blue-400">Portfolio</a>
       </nav>
+
+      <!-- LinkedIn -->
       <a href="https://www.linkedin.com/in/rachitjain1209/" target="_blank"
          class="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -45,18 +62,50 @@
   </header>
 
   <!-- Content -->
-  <main class="pt-20">
+  <main class="pt-24"> <!-- bigger top padding so Resume not cut -->
     <!-- Resume Section -->
     <section id="resume" class="max-w-6xl mx-auto px-6 py-12">
       <h2 class="text-3xl font-bold mb-6">Resume</h2>
-      <iframe src="https://docs.google.com/document/d/1W8QFw_9cVIpjWScrxiX-B39Z9reREP5SDYbGvuUrsX4/preview"></iframe>
+      <iframe src="https://docs.google.com/document/d/1W8QFw_9cVIpjWScrxiX-B39Z9reREP5SDYbGvuUrsX4/preview&rm=minimal"></iframe>
     </section>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="max-w-6xl mx-auto px-6 py-12">
       <h2 class="text-3xl font-bold mb-6">Portfolio</h2>
-      <iframe src="https://docs.google.com/presentation/d/1mMGED6Mz9y6HCn28FDpEMq5fTCSWFivmjjo70qNjJSY/preview?rm=minimal&slide=id.g380abb5e460_0_32"></iframe>
+      <div class="relative">
+        <!-- Slides iframe -->
+        <iframe id="portfolioFrame" src="https://docs.google.com/presentation/d/1mMGED6Mz9y6HCn28FDpEMq5fTCSWFivmjjo70qNjJSY/embed?start=false&loop=false&delayms=3000"></iframe>
+        <!-- Controls -->
+        <div class="absolute bottom-3 right-3 flex space-x-2">
+          <button onclick="prevSlide()" class="px-3 py-1 bg-gray-800 text-white rounded hover:bg-gray-700">◀ Prev</button>
+          <button onclick="nextSlide()" class="px-3 py-1 bg-gray-800 text-white rounded hover:bg-gray-700">Next ▶</button>
+        </div>
+      </div>
     </section>
   </main>
+
+  <!-- Back to Top Button -->
+  <button onclick="window.scrollTo({top:0, behavior:'smooth'})" 
+    class="fixed bottom-6 right-6 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition">
+    ↑ Top
+  </button>
+
+  <script>
+    // Dark/Light Mode Toggle
+    const toggleBtn = document.getElementById('theme-toggle');
+    toggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      toggleBtn.textContent = document.documentElement.classList.contains('dark') ? "☀️" : "🌙";
+    });
+
+    // Portfolio navigation (using slide query param)
+    let slideIndex = 1;
+    function updateSlide() {
+      const base = "https://docs.google.com/presentation/d/1mMGED6Mz9y6HCn28FDpEMq5fTCSWFivmjjo70qNjJSY/embed?start=false&loop=false&delayms=3000";
+      document.getElementById("portfolioFrame").src = base + `&slide=id.p${slideIndex}`;
+    }
+    function nextSlide() { slideIndex++; updateSlide(); }
+    function prevSlide() { if(slideIndex > 1) slideIndex--; updateSlide(); }
+  </script>
 </body>
 </html>
