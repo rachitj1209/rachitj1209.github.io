@@ -10,61 +10,98 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; }
     iframe { width: 100%; border: none; }
+    header { backdrop-filter: blur(8px); }
   </style>
 </head>
-<body class="bg-gray-900 text-gray-100">
+<body class="bg-gray-50 text-gray-900">
   <!-- Navbar -->
-  <header class="fixed top-0 left-0 w-full bg-gray-950 shadow-lg z-50">
+  <header class="fixed top-0 left-0 w-full bg-white/80 shadow-md z-50">
     <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-      <!-- Nav links -->
+      <!-- Left: Name -->
+      <span class="font-bold text-xl">Rachit Jain</span>
+      <!-- Right: Nav links -->
       <nav class="flex space-x-8 text-lg font-semibold">
-        <a href="#top" class="hover:text-blue-400">Resume</a>
-        <a href="#portfolio" class="hover:text-blue-400">Portfolio</a>
+        <a href="#experience" class="hover:text-blue-600">Experience</a>
+        <a href="#resume" class="hover:text-blue-600">Resume</a>
+        <a href="#portfolio" class="hover:text-blue-600">Portfolio</a>
       </nav>
-
-      <!-- LinkedIn -->
-      <a href="https://www.linkedin.com/in/rachitjain1209/" target="_blank"
-         class="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-500 transition">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M19 0h-14c-2.761 0-5 2.239-5 
-          5v14c0 2.761 2.239 5 5 5h14c2.762 
-          0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 
-          19h-3v-10h3v10zm-1.5-11.268c-.966 
-          0-1.75-.79-1.75-1.764s.784-1.764 
-          1.75-1.764 1.75.79 
-          1.75 1.764-.784 1.764-1.75 1.764zm13.5 
-          11.268h-3v-5.604c0-1.337-.025-3.061-1.865-3.061-1.867 
-          0-2.154 1.459-2.154 2.967v5.698h-3v-10h2.885v1.367h.041c.402-.76 
-          1.384-1.561 2.849-1.561 3.047 
-          0 3.609 2.005 3.609 4.615v5.579z"/>
-        </svg>
-        <span>LinkedIn</span>
-      </a>
     </div>
   </header>
 
   <!-- Content -->
   <main id="top" class="pt-28">
+    <!-- Experience Section -->
+    <section id="experience" class="max-w-6xl mx-auto px-6 py-12">
+      <h2 class="text-3xl font-bold mb-2">Experience</h2>
+      <p class="text-gray-600 mb-8">Mechanical Engineering</p>
+
+      <div class="space-y-6">
+        <!-- Rutgers Formula Racing -->
+        <div class="bg-white shadow-lg rounded-xl p-6">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center space-x-3">
+              <span class="text-2xl">🏎️</span>
+              <h3 class="text-xl font-semibold">Member @ Rutgers Formula Racing</h3>
+            </div>
+            <span class="text-sm text-gray-500">Sept 2022 – Present</span>
+          </div>
+          <ul class="list-disc list-inside text-gray-700 space-y-1">
+            <li>Designed and analyzed components for the collegiate Formula SAE race car.</li>
+            <li>Collaborated with a cross-functional team of engineers to optimize performance.</li>
+            <li>Applied CAD and FEA tools to validate structural integrity.</li>
+          </ul>
+        </div>
+
+        <!-- General Motors -->
+        <div class="bg-white shadow-lg rounded-xl p-6">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center space-x-3">
+              <span class="text-2xl">🚗</span>
+              <h3 class="text-xl font-semibold">Intern @ General Motors</h3>
+            </div>
+            <span class="text-sm text-gray-500">Summer 2024</span>
+          </div>
+          <ul class="list-disc list-inside text-gray-700 space-y-1">
+            <li>Developed design solutions for automotive systems using CAD tools.</li>
+            <li>Participated in design reviews and product validation testing.</li>
+            <li>Worked within a fast-paced manufacturing environment.</li>
+          </ul>
+        </div>
+
+        <!-- Marotta Controls -->
+        <div class="bg-white shadow-lg rounded-xl p-6">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center space-x-3">
+              <span class="text-2xl">⚙️</span>
+              <h3 class="text-xl font-semibold">Engineering Co-op @ Marotta Controls</h3>
+            </div>
+            <span class="text-sm text-gray-500">Jan 2023 – Aug 2023</span>
+          </div>
+          <ul class="list-disc list-inside text-gray-700 space-y-1">
+            <li>Supported aerospace and defense component design projects.</li>
+            <li>Assisted with validation testing and documentation for compliance.</li>
+            <li>Worked closely with senior engineers to refine design processes.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- Resume Section -->
-    <section class="max-w-6xl mx-auto px-6 py-12">
-      <h2 class="text-3xl font-bold mb-6 text-blue-400">Resume</h2>
-      <iframe src="https://docs.google.com/document/d/1W8QFw_9cVIpjWScrxiX-B39Z9reREP5SDYbGvuUrsX4/preview" height="900"></iframe>
+    <section id="resume" class="max-w-6xl mx-auto px-6 py-12">
+      <h2 class="text-3xl font-bold mb-2">Resume</h2>
+      <p class="text-gray-600 mb-6">Downloadable and viewable version of my professional resume.</p>
+      <iframe src="https://docs.google.com/document/d/e/2PACX-1vTKRxhm1e2wMCOvztQzCjts-6-9Af1bGhv7ICpINr3aHcuTiy-2Kfgcz9Q3hxHCk5f6VzqQSLZGBoyp/pub?embedded=true" height="900"></iframe>
     </section>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="max-w-6xl mx-auto px-6 py-12">
-      <h2 class="text-3xl font-bold mb-6 text-blue-400">Portfolio</h2>
+      <h2 class="text-3xl font-bold mb-2">Portfolio</h2>
+      <p class="text-gray-600 mb-6">A collection of selected projects and technical work.</p>
       <div class="flex justify-center">
         <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRlVIU6uNtyRV_rJ9i0ouvLv78brmvF4lF8lDgBJqIafVz56EP5hDpfEO_HMEACFAAa4WeOTw92Aq_i/pubembed?start=false&loop=false&delayms=60000"
           frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
       </div>
     </section>
   </main>
-
-  <!-- Back to Top Button -->
-  <button onclick="window.scrollTo({top:0, behavior:'smooth'})" 
-    class="fixed bottom-6 right-6 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-500 transition">
-    ↑ Top
-  </button>
 </body>
 </html>
