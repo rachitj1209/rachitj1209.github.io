@@ -10,27 +10,21 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; }
     iframe { width: 100%; border: none; }
-    body, header, section { transition: background 0.3s, color 0.3s; }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
+<body class="bg-gray-900 text-gray-100">
   <!-- Navbar -->
-  <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50 dark:bg-gray-900 dark:text-gray-100">
-    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-3">
-      <!-- Light/Dark toggle -->
-      <button id="theme-toggle" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition">
-        🌙
-      </button>
-
+  <header class="fixed top-0 left-0 w-full bg-gray-950 shadow-lg z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
       <!-- Nav links -->
-      <nav class="flex space-x-6 text-lg font-medium">
-        <a href="#top" class="hover:text-blue-600 dark:hover:text-blue-400">Resume</a>
-        <a href="#portfolio" class="hover:text-blue-600 dark:hover:text-blue-400">Portfolio</a>
+      <nav class="flex space-x-8 text-lg font-semibold">
+        <a href="#top" class="hover:text-blue-400">Resume</a>
+        <a href="#portfolio" class="hover:text-blue-400">Portfolio</a>
       </nav>
 
       <!-- LinkedIn -->
       <a href="https://www.linkedin.com/in/rachitjain1209/" target="_blank"
-         class="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+         class="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-500 transition">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
           <path d="M19 0h-14c-2.761 0-5 2.239-5 
           5v14c0 2.761 2.239 5 5 5h14c2.762 
@@ -50,34 +44,27 @@
   </header>
 
   <!-- Content -->
-  <main id="top" class="pt-24">
+  <main id="top" class="pt-28">
     <!-- Resume Section -->
     <section class="max-w-6xl mx-auto px-6 py-12">
-      <h2 class="text-3xl font-bold mb-6">Resume</h2>
+      <h2 class="text-3xl font-bold mb-6 text-blue-400">Resume</h2>
       <iframe src="https://docs.google.com/document/d/e/2PACX-1vTKRxhm1e2wMCOvztQzCjts-6-9Af1bGhv7ICpINr3aHcuTiy-2Kfgcz9Q3hxHCk5f6VzqQSLZGBoyp/pub?embedded=true" height="900"></iframe>
     </section>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="max-w-6xl mx-auto px-6 py-12">
-      <h2 class="text-3xl font-bold mb-6">Portfolio</h2>
-      <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRlVIU6uNtyRV_rJ9i0ouvLv78brmvF4lF8lDgBJqIafVz56EP5hDpfEO_HMEACFAAa4WeOTw92Aq_i/pubembed?start=false&loop=false&delayms=60000"
-        frameborder="0" width="100%" height="600" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+      <h2 class="text-3xl font-bold mb-6 text-blue-400">Portfolio</h2>
+      <div class="flex justify-center">
+        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRlVIU6uNtyRV_rJ9i0ouvLv78brmvF4lF8lDgBJqIafVz56EP5hDpfEO_HMEACFAAa4WeOTw92Aq_i/pubembed?start=false&loop=false&delayms=60000"
+          frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+      </div>
     </section>
   </main>
 
   <!-- Back to Top Button -->
   <button onclick="window.scrollTo({top:0, behavior:'smooth'})" 
-    class="fixed bottom-6 right-6 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition">
+    class="fixed bottom-6 right-6 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-500 transition">
     ↑ Top
   </button>
-
-  <script>
-    // Dark/Light Mode Toggle
-    const toggleBtn = document.getElementById('theme-toggle');
-    toggleBtn.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark');
-      toggleBtn.textContent = document.documentElement.classList.contains('dark') ? "☀️" : "🌙";
-    });
-  </script>
 </body>
 </html>
