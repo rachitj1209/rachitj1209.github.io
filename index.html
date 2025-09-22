@@ -1,49 +1,123 @@
-<!-- Navbar -->
-<header class="fixed top-0 left-0 w-full glass shadow-md z-50">
-  <div class="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
-    <span class="font-bold text-lg sm:text-xl">Rachit Jain</span>
-    <div class="flex items-center space-x-4 sm:space-x-6">
-      <nav class="flex space-x-4 sm:space-x-8 text-base lg:text-lg font-semibold">
-        <a href="#experience" class="hover:text-blue-600">Experience</a>
-        <a href="#resume" class="hover:text-blue-600">Resume</a>
-        <a href="#portfolio" class="hover:text-blue-600">Portfolio</a>
-      </nav>
-      <a href="https://www.linkedin.com/in/rachitjain1209/" target="_blank" class="hover:opacity-80 transition">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="linkedin-logo">
-      </a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rachit Jain</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+    iframe { width: 100%; border: none; }
+    header { backdrop-filter: blur(8px); }
+    .logo { width: 40px; height: 40px; object-fit: cover; border-radius: 6px; }
+    .glass {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(12px);
+    }
+    .linkedin-logo {
+      width: 28px;
+      height: 28px;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 w-full glass shadow-md z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+      <!-- Left: Name -->
+      <span class="font-bold text-xl">Rachit Jain</span>
+      <!-- Right: Nav links + LinkedIn -->
+      <div class="flex items-center space-x-6">
+        <nav class="flex space-x-8 text-lg font-semibold">
+          <a href="#experience" class="hover:text-blue-600">Experience</a>
+          <a href="#resume" class="hover:text-blue-600">Resume</a>
+          <a href="#portfolio" class="hover:text-blue-600">Portfolio</a>
+        </nav>
+        <a href="https://www.linkedin.com/in/rachitjain1209/" target="_blank" 
+           class="hover:opacity-80 transition">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="linkedin-logo">
+        </a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<!-- Experience Section -->
-<div class="flex items-center justify-between mb-2">
-  <div class="flex items-center space-x-3">
-    <img src="..." class="logo" alt="Logo">
-    <h3 class="text-lg lg:text-xl font-semibold">Ergonomics Lead @ Rutgers Formula Racing</h3>
-  </div>
-  <span class="text-xs lg:text-sm text-gray-700">Jan 2024 – Present</span>
-</div>
+  <!-- Content -->
+  <main id="top" class="pt-28">
+    <!-- Experience Section -->
+    <section id="experience" class="max-w-6xl mx-auto px-6 py-12">
+      <h2 class="text-3xl font-bold mb-2">Experience</h2>
+      <p class="text-gray-600 mb-8">Mechanical Engineering | Automotive | Aerospace</p>
 
-<!-- Repeat above title/date size tweaks for GM & Marotta -->
+      <div class="space-y-6">
+        <!-- Rutgers Formula Racing -->
+        <div class="glass shadow-lg rounded-xl p-6">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center space-x-3">
+              <img src="https://img.p.mapq.st/?url=https://s3-media1.fl.yelpcdn.com/bphoto/vEOltizO0YsmDtnV9DqIpA/l.jpg?w=3840&q=75" class="logo" alt="Rutgers Formula Racing Logo">
+              <h3 class="text-xl font-semibold">Ergonomics Lead @ Rutgers Formula Racing</h3>
+            </div>
+            <span class="text-sm text-gray-700">Jan 2024 – Present</span>
+          </div>
+          <ul class="list-disc list-inside text-gray-800 space-y-1">
+            <li>Served as the engineering lead on the team to design, manufacture, and integrate components (seat, dashboard, throttle pedal, etc.) on an FSAE-style vehicle.</li>
+            <li>Utilized a custom-built ergonomics testing fixture and RAMSIS to gather data on multiple drivers’ seating positions to design an optimized cockpit that follows FSAE guidelines.</li>
+            <li>Designed a carbon fiber dashboard utilizing SOLIDWORKS to address problems found in previous iterations and provide easier access to controls to ensure driver ergonomics.</li>
+          </ul>
+        </div>
 
-<!-- Resume Section -->
-<section id="resume" class="max-w-6xl mx-auto px-4 sm:px-6 py-10">
-  <h2 class="text-3xl font-bold mb-2">Resume</h2>
-  <p class="text-gray-600 mb-4 sm:mb-6">Downloadable and viewable version of my professional resume.</p>
-  <iframe 
-    src="https://docs.google.com/document/d/1W8QFw_9cVIpjWScrxiX-B39Z9reREP5SDYbGvuUrsX4/preview" 
-    scrolling="no" 
-    class="w-full h-[800px] lg:h-[1400px] rounded-lg shadow-md">
-  </iframe>
-</section>
+        <!-- General Motors -->
+        <div class="glass shadow-lg rounded-xl p-6">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center space-x-3">
+              <img src="https://media.licdn.com/dms/image/v2/D4E0BAQEfAZWzerj03w/company-logo_200_200/B4EZdkPGXYGcAI-/0/1749733370529/general_motors_logo?e=2147483647&v=beta&t=dDatsMr-Ij9QYc4Zf3sRs4Lw3ZrbsdBbqypq8cprxXI" class="logo" alt="GM Logo">
+              <h3 class="text-xl font-semibold">Engineering Design Intern @ General Motors</h3>
+            </div>
+            <span class="text-sm text-gray-700">Jun 2025 – Sep 2025</span>
+          </div>
+          <ul class="list-disc list-inside text-gray-800 space-y-1">
+            <li>Utilized Siemens NX to design endcaps and brackets for Cadillac & Chevrolet vehicle instrument panels.</li>
+            <li>Performed structural and modal FEA on injection molded and stamped components using NX Pre/Post and Autodesk Moldflow; analyzed results to meet strength and stiffness requirements.</li>
+            <li>Developed an Assembly Sequence to follow Cadillac instrument panel in development through production and manufacturing to support design and pre-production builds.</li>
+            <li>Collaborated with cross-functional teams to broaden technical knowledge and gain exposure to vehicle development processes, such as human factors and occupant accommodations, using RAMSIS, while also supporting the intern program by organizing tours and visits to enhance learning.</li>
+          </ul>
+        </div>
 
-<!-- Portfolio Section (reduced spacing) -->
-<section id="portfolio" class="max-w-6xl mx-auto px-4 sm:px-6 py-10">
-  <h2 class="text-3xl font-bold mb-2">Portfolio</h2>
-  <p class="text-gray-600 mb-4 sm:mb-6">A collection of selected projects and technical work.</p>
-  <div class="flex justify-center">
-    <iframe src="..." frameborder="0" width="100%" height="400" 
-      class="lg:w-[960px] lg:h-[569px] rounded-lg shadow-md"
-      allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-  </div>
-</section>
+        <!-- Marotta Controls -->
+        <div class="glass shadow-lg rounded-xl p-6">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center space-x-3">
+              <img src="https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/2c742863fb096b524a70c8e44b3eb1e7" class="logo" alt="Marotta Logo">
+              <h3 class="text-xl font-semibold">Production Engineering Intern @ Marotta Controls</h3>
+            </div>
+            <span class="text-sm text-gray-700">Jun 2024 – Aug 2024</span>
+          </div>
+          <ul class="list-disc list-inside text-gray-800 space-y-1">
+            <li>Designed and manufactured a high-pressure mobile testing cart that withstands over 6,000 psi for testing solenoid valves supplied to customers such as SpaceX and Blue Origin.</li>
+            <li>Iterated on tools and fixtures such as poppet holders and safety shields to protect against high temperatures (280°F) encountered during the armature assembly process using 3D Printing.</li>
+            <li>Performed quality inspections per ISO 9001 by using various metrology equipment on components to complete work orders and gather information for design updates and NCRs.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="max-w-6xl mx-auto px-6 py-12">
+      <h2 class="text-3xl font-bold mb-2">Resume</h2>
+      <p class="text-gray-600 mb-6">Downloadable and viewable version of my professional resume.</p>
+      <iframe src="https://docs.google.com/document/d/1W8QFw_9cVIpjWScrxiX-B39Z9reREP5SDYbGvuUrsX4/preview" scrolling="no" height="1400"></iframe>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="max-w-6xl mx-auto px-6 py-12">
+      <h2 class="text-3xl font-bold mb-2">Portfolio</h2>
+      <p class="text-gray-600 mb-6">A collection of selected projects and technical work.</p>
+      <div class="flex justify-center">
+        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRlVIU6uNtyRV_rJ9i0ouvLv78brmvF4lF8lDgBJqIafVz56EP5hDpfEO_HMEACFAAa4WeOTw92Aq_i/pubembed?start=false&loop=false&delayms=60000"
+          frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
