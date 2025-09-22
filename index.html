@@ -8,12 +8,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #111;
+      background: radial-gradient(circle at top, #0b0d17, #000000);
+      background-attachment: fixed;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Starfield effect */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: transparent url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+      opacity: 0.4;
+      z-index: -1;
+    }
+
     iframe { width: 100%; border: none; }
     header { backdrop-filter: blur(12px); }
     .logo { width: 40px; height: 40px; object-fit: cover; border-radius: 6px; }
     .glass {
-      background: rgba(255, 255, 255, 0.45); /* lighter & more transparent */
+      background: rgba(255, 255, 255, 0.35);
       backdrop-filter: blur(18px);
     }
     .linkedin-logo {
@@ -22,7 +40,7 @@
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body>
   <!-- Navbar -->
   <header class="fixed top-0 left-0 w-full glass shadow-md z-50">
     <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
@@ -44,13 +62,13 @@
   <!-- Content -->
   <main id="top" class="pt-28">
     <!-- Experience Section -->
-    <section id="experience" class="max-w-6xl mx-auto px-6 py-12">
+    <section id="experience" class="max-w-6xl mx-auto px-6 py-12 text-white">
       <h2 class="text-3xl font-bold mb-2">Experience</h2>
-      <p class="text-gray-600 mb-8">Mechanical Engineering | Automotive | Aerospace</p>
+      <p class="text-gray-300 mb-8">Mechanical Engineering | Automotive | Aerospace</p>
 
       <div class="space-y-6">
         <!-- Rutgers Formula Racing -->
-        <div class="glass shadow-lg rounded-xl p-6">
+        <div class="glass shadow-lg rounded-xl p-6 text-black">
           <div class="flex items-center justify-between mb-2">
             <div class="flex items-center space-x-3">
               <img src="https://img.p.mapq.st/?url=https://s3-media1.fl.yelpcdn.com/bphoto/vEOltizO0YsmDtnV9DqIpA/l.jpg?w=3840&q=75" class="logo" alt="Rutgers Formula Racing Logo">
@@ -66,7 +84,7 @@
         </div>
 
         <!-- General Motors -->
-        <div class="glass shadow-lg rounded-xl p-6">
+        <div class="glass shadow-lg rounded-xl p-6 text-black">
           <div class="flex items-center justify-between mb-2">
             <div class="flex items-center space-x-3">
               <img src="https://media.licdn.com/dms/image/v2/D4E0BAQEfAZWzerj03w/company-logo_200_200/B4EZdkPGXYGcAI-/0/1749733370529/general_motors_logo?e=2147483647&v=beta&t=dDatsMr-Ij9QYc4Zf3sRs4Lw3ZrbsdBbqypq8cprxXI" class="logo" alt="GM Logo">
@@ -83,7 +101,7 @@
         </div>
 
         <!-- Marotta Controls -->
-        <div class="glass shadow-lg rounded-xl p-6">
+        <div class="glass shadow-lg rounded-xl p-6 text-black">
           <div class="flex items-center justify-between mb-2">
             <div class="flex items-center space-x-3">
               <img src="https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/2c742863fb096b524a70c8e44b3eb1e7" class="logo" alt="Marotta Logo">
@@ -101,16 +119,16 @@
     </section>
 
     <!-- Resume Section -->
-    <section id="resume" class="max-w-6xl mx-auto px-6 py-12">
+    <section id="resume" class="max-w-6xl mx-auto px-6 py-12 text-white">
       <h2 class="text-3xl font-bold mb-2">Resume</h2>
-      <p class="text-gray-600 mb-6">Downloadable and viewable version of my professional resume.</p>
+      <p class="text-gray-300 mb-6">Downloadable and viewable version of my professional resume.</p>
       <iframe src="https://docs.google.com/document/d/1W8QFw_9cVIpjWScrxiX-B39Z9reREP5SDYbGvuUrsX4/preview" scrolling="no" height="1200"></iframe>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="max-w-6xl mx-auto px-6 py-6"> <!-- reduced py from 12 to 6 -->
+    <section id="portfolio" class="max-w-6xl mx-auto px-6 py-6 text-white">
       <h2 class="text-3xl font-bold mb-2">Portfolio</h2>
-      <p class="text-gray-600 mb-6">A collection of selected projects and technical work.</p>
+      <p class="text-gray-300 mb-6">A collection of selected projects and technical work.</p>
       <div class="flex justify-center">
         <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRlVIU6uNtyRV_rJ9i0ouvLv78brmvF4lF8lDgBJqIafVz56EP5hDpfEO_HMEACFAAa4WeOTw92Aq_i/pubembed?start=false&loop=false&delayms=60000"
           frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
