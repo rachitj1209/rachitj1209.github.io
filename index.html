@@ -6,45 +6,21 @@
   <title>Rachit Jain</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; }
+    body { font-family: 'Inter', sans-serif; position: relative; z-index: 1; }
     iframe { width: 100%; border: none; }
     header { backdrop-filter: blur(12px); }
     .logo { width: 40px; height: 40px; object-fit: cover; border-radius: 6px; }
-    .glass {
-      background: rgba(255, 255, 255, 0.45);
-      backdrop-filter: blur(18px);
-    }
+    .glass { background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(18px); }
     .linkedin-logo { width: 28px; height: 28px; }
-    /* Smooth dropdown animation */
-    .transition-height {
-      transition: max-height 0.3s ease;
-      overflow: hidden;
-    }
-    /* Stylish glass button */
-    .glass-btn {
-      background: rgba(255, 255, 255, 0.35);
-      backdrop-filter: blur(10px);
-      color: #000;
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-      border: 1px solid rgba(255,255,255,0.6);
-      transition: all 0.3s ease;
-    }
-    .glass-btn:hover {
-      background: rgba(255, 255, 255, 0.55);
-      transform: translateY(-2px);
-    }
-    /* Card hover bounce */
-    .card-hover {
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .card-hover:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 12px 20px rgba(0,0,0,0.15);
-    }
+    .transition-height { transition: max-height 0.3s ease; overflow: hidden; }
+    .glass-btn { background: rgba(255, 255, 255, 0.35); backdrop-filter: blur(10px); color: #000; font-weight: 600;
+      padding: 0.5rem 1rem; border-radius: 0.5rem; border: 1px solid rgba(255,255,255,0.6); transition: all 0.3s ease; }
+    .glass-btn:hover { background: rgba(255, 255, 255, 0.55); transform: translateY(-2px); }
+    .card-hover { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .card-hover:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 12px 20px rgba(0,0,0,0.15); }
 
     /* Progress bar */
     #progress-bar {
@@ -64,25 +40,26 @@
       width: 100%; height: 100%;
       z-index: -1;
     }
-
-    
   </style>
 </head>
 <body class="bg-white text-black">
+
+  <!-- Scroll Progress Bar -->
+  <div id="progress-bar"></div>
+
+  <!-- Particles Background -->
+  <div id="tsparticles"></div>
+
   <!-- Navbar -->
   <header class="fixed top-0 left-0 w-full glass shadow-md z-50">
     <div class="max-w-6xl mx-auto flex items-center justify-between px-4 md:px-6 py-4">
       <span class="font-bold text-xl">Rachit Jain</span>
-      
-      <!-- Hamburger button (mobile only) -->
       <button id="nav-toggle" class="md:hidden text-black focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
             d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
-
-      <!-- Nav links + LinkedIn -->
       <div id="nav-menu" class="hidden md:flex md:items-center md:space-x-6 transition-height max-h-0 md:max-h-full">
         <nav class="flex flex-col md:flex-row md:space-x-8 text-lg font-semibold">
           <a href="#experience" class="hover:text-blue-600 py-1 md:py-0">Experience</a>
@@ -98,9 +75,9 @@
   </header>
 
   <script>
+    // Mobile nav toggle
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
-
     navToggle.addEventListener('click', () => {
       if(navMenu.classList.contains('hidden')){
         navMenu.classList.remove('hidden');
@@ -108,6 +85,36 @@
       } else {
         navMenu.style.maxHeight = "0";
         setTimeout(() => navMenu.classList.add('hidden'), 300);
+      }
+    });
+
+    // Scroll progress bar
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      document.getElementById('progress-bar').style.width = scrollPercent + "%";
+    });
+
+    // Particles background config
+    tsParticles.load("tsparticles", {
+      fpsLimit: 60,
+      particles: {
+        number: { value: 60 },
+        size: { value: 2 },
+        move: { enable: true, speed: 1 },
+        opacity: { value: 0.4 },
+        links: { enable: true, color: "#3b82f6", opacity: 0.3 },
+        color: { value: "#2563eb" }
+      },
+      interactivity: {
+        events: {
+          onHover: { enable: true, mode: "repulse" },
+          resize: true
+        },
+        modes: {
+          repulse: { distance: 100 }
+        }
       }
     });
   </script>
@@ -170,34 +177,33 @@
       </div>
     </section>
 
-<!-- Resume Section -->
-<section id="resume" class="max-w-6xl mx-auto py-12 px-4">
-  <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-    <div>
-      <h2 class="text-2xl md:text-3xl font-bold mb-1">Resume</h2>
-      <p class="text-gray-600 text-sm md:text-base">
-        Download my professional resume to view my complete experience, skills, and qualifications.
-      </p>
-    </div>
-    <!-- Desktop + Mobile Button -->
-    <a href="https://docs.google.com/document/d/1W8QFw_9cVIpjWScrxiX-B39Z9reREP5SDYbGvuUrsX4/export?format=pdf"
-       target="_blank"
-       class="flex items-center gap-2 bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 transition mt-4 md:mt-0">
-       <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-           d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5m0 0l5-5m-5 5V4" />
-       </svg>
-       Download Resume (PDF)
-    </a>
-  </div>
+    <!-- Resume Section -->
+    <section id="resume" class="max-w-6xl mx-auto py-12 px-4">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold mb-1">Resume</h2>
+          <p class="text-gray-600 text-sm md:text-base">
+            Download my professional resume to view my complete experience, skills, and qualifications.
+          </p>
+        </div>
+        <!-- Desktop + Mobile Button -->
+        <a href="https://docs.google.com/document/d/1W8QFw_9cVIpjWScrxiX-B39Z9reREP5SDYbGvuUrsX4/export?format=pdf"
+           target="_blank"
+           class="flex items-center gap-2 bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 transition mt-4 md:mt-0">
+           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+               d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5m0 0l5-5m-5 5V4" />
+           </svg>
+           Download Resume (PDF)
+        </a>
+      </div>
 
-  <!-- PDF Viewer (hidden on mobile) -->
-  <div class="hidden md:block mt-6">
-    <iframe src="Resume.pdf#toolbar=0&navpanes=0" 
-      class="w-full h-[1100px] border rounded-lg shadow-md"></iframe>
-  </div>
-</section>
-
+      <!-- PDF Viewer (hidden on mobile) -->
+      <div class="hidden md:block mt-6">
+        <iframe src="Resume.pdf#toolbar=0&navpanes=0" 
+          class="w-full h-[1100px] border rounded-lg shadow-md"></iframe>
+      </div>
+    </section>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="max-w-6xl mx-auto py-6">
