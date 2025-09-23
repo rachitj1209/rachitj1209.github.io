@@ -166,23 +166,24 @@
   </div>
 
   <!-- Desktop PDF Viewer -->
-  <div class="hidden md:block overflow-x-auto">
-    <iframe 
-      src="Resume.pdf"
-      class="w-full md:w-full border rounded-lg"
-      style="height:1200px; max-width:100%;">
-    </iframe>
-  </div>
+<div class="hidden md:block overflow-x-auto">
+  <iframe src="Resume.pdf" 
+          class="w-full border rounded-lg"
+          style="height:1200px; max-width:100%;">
+  </iframe>
+</div>
 
-  <!-- Mobile PDF Viewer -->
-  <div class="block md:hidden overflow-x-auto">
-    <iframe 
-      src="Resume.pdf"
-      class="w-full border rounded-lg"
-      style="height:80vh; max-width:100%;">
-    </iframe>
-  </div>
-</section>
+<!-- Mobile PDF Viewer -->
+<div class="block md:hidden overflow-x-auto">
+  <embed src="Resume.pdf" 
+         type="application/pdf" 
+         class="w-full border rounded-lg"
+         style="height:100vh; max-width:100%;" />
+  <p class="text-center mt-2">
+    If the PDF doesn’t display, 
+    <a href="Resume.pdf" class="text-blue-600 underline">click here to open it</a>.
+  </p>
+</div>
 
   <!-- Responsive Resume Viewer -->
   <div class="overflow-x-auto">
