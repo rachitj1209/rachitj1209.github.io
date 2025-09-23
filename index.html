@@ -149,41 +149,33 @@
       </div>
     </section>
 
-    <!-- Resume Section -->
 <!-- Resume Section -->
 <section id="resume" class="max-w-6xl mx-auto py-12 px-4">
   <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
     <div>
       <h2 class="text-2xl md:text-3xl font-bold mb-1">Resume</h2>
-      <p class="text-gray-600 text-sm md:text-base">Downloadable and viewable version of my professional resume.</p>
+      <p class="text-gray-600 text-sm md:text-base">
+        Download my professional resume to view my complete experience, skills, and qualifications.
+      </p>
     </div>
-    <!-- Force-download link from Google Drive -->
-    <a href="https://docs.google.com/document/d/1W8QFw_9cVIpjWScrxiX-B39Z9reREP5SDYbGvuUrsX4/export?format=pdf" 
-       class="glass-btn mt-3 md:mt-0" 
-       download>
-       Download Latest Resume
+    <!-- Desktop + Mobile Button -->
+    <a href="https://docs.google.com/document/d/1W8QFw_9cVIpjWScrxiX-B39Z9reREP5SDYbGvuUrsX4/export?format=pdf"
+       target="_blank"
+       class="flex items-center gap-2 bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 transition">
+       <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+           d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5m0 0l5-5m-5 5V4" />
+       </svg>
+       Download Resume (PDF)
     </a>
   </div>
 
-  <!-- Desktop PDF Viewer -->
-<div class="hidden md:block overflow-x-auto">
-  <iframe src="Resume.pdf" 
-          class="w-full border rounded-lg"
-          style="height:1200px; max-width:100%;">
-  </iframe>
-</div>
-
-<!-- Mobile PDF Viewer -->
-<div class="block md:hidden overflow-x-auto">
-  <embed src="Resume.pdf" 
-         type="application/pdf" 
-         class="w-full border rounded-lg"
-         style="height:100vh; max-width:100%;" />
-  <p class="text-center mt-2">
-    If the PDF doesn’t display, 
-    <a href="Resume.pdf" class="text-blue-600 underline">click here to open it</a>.
-  </p>
-</div>
+  <!-- PDF Viewer (hidden on mobile) -->
+  <div class="hidden md:block mt-6">
+    <iframe src="Resume.pdf#toolbar=0&navpanes=0" 
+      class="w-full h-[1100px] border rounded-lg shadow-md"></iframe>
+  </div>
+</section>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="max-w-6xl mx-auto py-6">
